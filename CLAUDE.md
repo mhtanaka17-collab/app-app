@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **app-app** — HTML/CSS/JavaScript で構築するWebアプリケーション。
 
+- GitHubリポジトリ: https://github.com/mhtanaka17-collab/app-app.git
+
 ## 技術スタック
 
 - HTML
