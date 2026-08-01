@@ -49,6 +49,22 @@ function renderTOC() {
   tocEl.innerHTML = html;
 }
 
+function renderTable(table) {
+  if (!table) return "";
+  const head = `<tr>${table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr>`;
+  const body = table.rows
+    .map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`)
+    .join("");
+  return `
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>${head}</thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>
+  `;
+}
+
 function renderPage(entry) {
   const pageEl = document.getElementById("page-view");
   const index = FLAT_PAGES.indexOf(entry);
@@ -66,6 +82,7 @@ function renderPage(entry) {
     <div class="breadcrumb">${escapeHtml(entry.unit.title)} ／ ${escapeHtml(entry.chapter.title)}</div>
     <h2>${escapeHtml(entry.page.title)}</h2>
     <div class="page-body">${escapeHtml(entry.page.body)}</div>
+    ${renderTable(entry.page.table)}
     <div class="prompt-box">
       <div class="prompt-label">Claudeへのプロンプト例</div>
       <pre>${escapeHtml(entry.page.prompt)}</pre>

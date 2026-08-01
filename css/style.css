@@ -92,6 +92,30 @@ main {
   margin-bottom: 24px;
 }
 
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid var(--color-border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  background: var(--color-surface);
+  font-weight: bold;
+}
+
 .prompt-box {
   background: var(--color-accent-bg);
   border: 1px solid var(--color-accent);
